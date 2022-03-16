@@ -2,10 +2,12 @@
 import logo from '../LOGO-PUBLIDIMAS-2018-NEW.png';
 import React from 'react';
 import Button from '@mui/material/Button';
+import CartWidget from './CartWidget';
 
-function NavBar(){
+export default function NavBar(){
     return(
     
+        <>
             <div className="App">
                 <header className="main-header">
                     <img src={logo} className="container-logo" alt="logo" />
@@ -13,14 +15,16 @@ function NavBar(){
                     <div className="navbar">
                         <Button>Inicio</Button>
                         <Button>Tienda</Button>
-                        <Button href="#">Nosotros</Button>                        
-                        <Button href="#">Contacto</Button>
+                        <Button>Nosotros</Button>                        
+                        <Button>Contacto</Button>
                     </div>
+
+                    <CartWidget />
                     
                 </header>
-                </div>
+            </div>
+        </>           
+                
 
     )
 }
-
-export default NavBar

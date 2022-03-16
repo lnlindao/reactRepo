@@ -1,5 +1,10 @@
 import './App.css';
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+import ReactDOM from 'react-dom';
+import CssBaseline from '@mui/material/CssBaseline';
+import Box from '@mui/material/Box';
+import Container from '@mui/material/Container';
 
 <link
   rel="stylesheet"
@@ -8,7 +13,15 @@ import NavBar from './components/NavBar'
 
 function App() {
   return (
-    <NavBar/>
+    <>
+      
+      <NavBar/>
+
+      <Container maxWidth="xl">
+        <ItemListContainer />
+      </Container>
+    </>
+    
   );
 }
 

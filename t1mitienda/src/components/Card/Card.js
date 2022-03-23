@@ -5,8 +5,16 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
 import './card.css'
+import ItemCount from '../ItemCount/ItemCount';
+import Button from '@mui/material/Button';
 
-export default function ActionAreaCard( {title, price, detail, img} ) {
+
+function onAdd (param) {  
+    console.log("param"+param)
+}
+
+
+export default function ActionAreaCard( {title, price, detail, img, stock} ) {
     return (
       <Card sx={{ maxWidth: 345 }}>
         <CardActionArea>
@@ -20,10 +28,13 @@ export default function ActionAreaCard( {title, price, detail, img} ) {
             <Typography variant="h5" component="div">
             {title}
             </Typography>
-            <Typography gutterBottom className='price'>$ {price}</Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography gutterBottom className='price'>$ {price}</Typography>   
+            <Typography gutterBottom variant="body2" color="text.secondary" >
             {detail}
             </Typography>
+            <ItemCount stock={stock} initial={1} onAdd={onAdd}></ItemCount>
+            <Button variant="contained" fullWidth="true" size="large" onClick={onAdd}>Agregar al carrito</Button>
+
           </CardContent>
         </CardActionArea>
       </Card>

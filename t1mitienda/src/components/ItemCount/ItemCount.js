@@ -11,7 +11,6 @@ const ItemCount = ({stock, initial, onAdd}) => {
     const addProduct = () => {
         if(count<stock){
             setCount(count + 1)
-            onAdd(setCount)
         }
     }
     const removeProduct = () => {
@@ -28,6 +27,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <input  value={count} variant="outlined"/>
                 <Button variant="outlined" onClick={addProduct}>+</Button>
             </Stack>
+            <Button variant="contained" 
+                    fullWidth="true"
+                    size="large"
+                    onClick={() => {onAdd (count)}}> Agregar al carrito</Button>
         </>
     )
 }

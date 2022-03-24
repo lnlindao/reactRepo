@@ -9,8 +9,8 @@ import ItemCount from '../ItemCount/ItemCount';
 import Button from '@mui/material/Button';
 
 
-function onAdd (param) {  
-    console.log("param"+param)
+const onAdd = (count) =>{
+    console.log(`Productos agregados: ${count}`)
 }
 
 
@@ -33,7 +33,8 @@ export default function ActionAreaCard( {title, price, detail, img, stock} ) {
             {detail}
             </Typography>
             <ItemCount stock={stock} initial={1} onAdd={onAdd}></ItemCount>
-            <Button variant="contained" fullWidth="true" size="large" onClick={onAdd}>Agregar al carrito</Button>
+            
+            
 
           </CardContent>
         </CardActionArea>

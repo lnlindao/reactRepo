@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
+import InputUnstyled from '@mui/base/InputUnstyled';
 
 
 const ItemCount = ({stock, initial, onAdd}) => {
@@ -24,11 +25,10 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <>
             <Stack spacing={0} direction="row" margin="30px 0">                
                 <Button variant="outlined" onClick={removeProduct}>-</Button>
-                <input  value={count} variant="outlined"/>
+                <InputUnstyled value={count}  />
                 <Button variant="outlined" onClick={addProduct}>+</Button>
             </Stack>
-            <Button variant="contained" 
-                    fullWidth="true"
+            <Button variant="contained" fullWidth={true}
                     size="large"
                     onClick={() => {onAdd (count)}}> Agregar al carrito</Button>
         </>

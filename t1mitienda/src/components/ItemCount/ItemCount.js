@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import InputUnstyled from '@mui/base/InputUnstyled';
+import TextField from '@mui/material/TextField';
 
 
 const ItemCount = ({stock, initial, onAdd}) => {
@@ -25,7 +26,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
         <>
             <Stack spacing={0} direction="row" margin="30px 0">                
                 <Button variant="outlined" onClick={removeProduct}>-</Button>
-                <InputUnstyled value={count}  />
+                <TextField id="outlined-size-normal" value={count} variant="outlined"/>
                 <Button variant="outlined" onClick={addProduct}>+</Button>
             </Stack>
             <Button variant="contained" fullWidth={true}

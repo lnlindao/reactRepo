@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import CardItem from "../Card/Card";
+import Item from "../Card/Card";
 import Box from '@mui/material/Box';
 
 
@@ -35,7 +35,9 @@ const ItemList = () => {
 
     const getProducts = () => {
         return new Promise((resolve, reject) => {
-            return resolve(listProducts)
+            return setTimeout(() => {
+                resolve(listProducts)
+            },3000);
         })
     }
     
@@ -55,7 +57,7 @@ const ItemList = () => {
 
                     return(
                         <Box gridColumn="span 3" key={id}>
-                            <CardItem data={product} />
+                            <Item data={product} />
                         </Box>
                     )
             })}                                       

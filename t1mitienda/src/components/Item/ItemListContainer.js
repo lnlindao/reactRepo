@@ -13,8 +13,6 @@ const ItemListContainer = () => {
     const [products, setProducts] = useState([])
 
         
-    console.log("array"+products)
-
     useEffect( () => {
         getProducts().then( (addProducts) => {
             setProducts(addProducts)            
@@ -32,7 +30,7 @@ const ItemListContainer = () => {
             <div className='container-cards'>
                 <Box sx={{ width: 1 }}>
                     <Box display="grid" gridTemplateColumns="repeat(12, 1fr)" gap={2}>
-                        <ItemList />
+                        <ItemList productos={products}/>
                     </Box>
                 </Box>
             </div>

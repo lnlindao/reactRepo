@@ -3,13 +3,13 @@ import Item from "../Card/Card";
 import Box from '@mui/material/Box';
 
 
-const ItemList = (products) => {
+const ItemList = ({productos}) => {
     
 
     return(
         <>        
-{/*        
-        {products.map( ( product ) => {
+        
+        {productos.map( ( product ) => {
                     const {id} = product
 
                     return(
@@ -17,7 +17,7 @@ const ItemList = (products) => {
                             <Item data={product} />
                         </Box>
                     )
-            })}                                        */}
+            })}                                        
                         
             
         </>

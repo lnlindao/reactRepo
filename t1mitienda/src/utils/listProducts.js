@@ -26,12 +26,8 @@ const ListProducts = [
         }
     ]
 
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            return setTimeout(() => {
-                resolve(ListProducts)
-            },3000);
-        })
-    }
 
-export default getProducts
+
+
+    
+export default ListProducts

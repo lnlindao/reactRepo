@@ -30,7 +30,8 @@ const ItemCount = ({stock, initial, onAdd}) => {
             </Stack>
             <Button variant="contained" fullWidth={true}
                     size="large"
-                    onClick={() => {onAdd (count)}}> Agregar al carrito</Button>
+                    onClick={() => {onAdd (count)}}> Agregar al carrito
+            </Button>
         </>
     )
 }

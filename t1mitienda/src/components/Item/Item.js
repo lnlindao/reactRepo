@@ -1,16 +1,15 @@
 import * as React from 'react';
-import './card.css'
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import { CardActionArea } from '@mui/material';
-import ItemCount from '../ItemCount/ItemCount';
+import ItemCount from './ItemCount';
 
+const urlImgs = "./images/products/"
 const onAdd = (count) =>{
     console.log(`Productos agregados: ${count}`)
 }
-const urlImgs = "./images/products/"
 
 
 export default function Item( {data} ) {

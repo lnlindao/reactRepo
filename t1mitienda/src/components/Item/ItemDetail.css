@@ -1,0 +1,10 @@
+img {
+    width: 100%;
+}
+.price{
+    margin: 2rem 0;
+}
+.productTitle {
+    font-size: 2rem;
+    font-weight: 700;
+}

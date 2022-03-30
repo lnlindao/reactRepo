@@ -1,12 +1,9 @@
-import ItemListContainer from '../components/Item/ItemListContainer';
-import Container from '@mui/material/Container';
+import ItemListContainer from '../components/Containers/ItemListContainer';
 
 function Homepage() {
   return (
     <>
-      <Container maxWidth="xl css-10m0cap">
         <ItemListContainer/>
-      </Container>
     </>
     
   );

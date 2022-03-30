@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
-import Item from "../Card/Card";
+import Item from "./Item";
 import Box from '@mui/material/Box';
 
 
 const ItemList = ({productos}) => {
     
-
     return(
         <>        
         

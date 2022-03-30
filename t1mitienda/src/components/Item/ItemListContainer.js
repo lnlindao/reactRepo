@@ -1,28 +1,26 @@
 import './ItemListContainer.css';
 import ItemList from './ItemList';
 import Box from '@mui/material/Box';
-import ListProducts from '../../utils/listProducts';
+import getProducts from '../../utils/ListProducts';
 import React, { useState, useEffect } from "react";
 
 
 
 
-const ItemListContainer = ({ListProducts}) => {
+const ItemListContainer = () => {
 
 
     const [products, setProducts] = useState([])
 
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            return setTimeout(() => {
-                resolve(ListProducts)
-            },3000);
-        })
-    }
-    
+        
+    console.log("array"+products)
+
     useEffect( () => {
         getProducts().then( (addProducts) => {
             setProducts(addProducts)
+            
+        }).catch( (error) =>{
+            console.log(error)
         }).finally( () => {
             console.log("Agegados")
         })

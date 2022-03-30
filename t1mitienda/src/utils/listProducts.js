@@ -1,6 +1,5 @@
 
-const ListProducts = () => {
-    const listProducts = [
+const ListProducts = [
         {
             id:1,
             title: 'Cepillo arcoiris',
@@ -27,23 +26,12 @@ const ListProducts = () => {
         }
     ]
 
-    
+    const getProducts = () => {
+        return new Promise((resolve, reject) => {
+            return setTimeout(() => {
+                resolve(ListProducts)
+            },3000);
+        })
+    }
 
-    return(
-        <>        
-       
-        {listProducts.map( ( product ) => {
-                    const {id} = product
-
-                    return(
-                        {product}
-                    )
-            })}                                       
-                        
-            
-        </>
-    ) 
-}
-
-
-export default ListProducts
+export default getProducts

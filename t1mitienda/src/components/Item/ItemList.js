@@ -8,7 +8,7 @@ const ItemList = (products) => {
 
     return(
         <>        
-       
+{/*        
         {products.map( ( product ) => {
                     const {id} = product
 
@@ -17,7 +17,7 @@ const ItemList = (products) => {
                             <Item data={product} />
                         </Box>
                     )
-            })}                                       
+            })}                                        */}
                         
             
         </>

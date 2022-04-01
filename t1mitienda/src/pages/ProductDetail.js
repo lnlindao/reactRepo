@@ -1,4 +1,4 @@
-import ListProducts from '../utils/ListProducts';
+import ListProducts from '../utils/listProducts';
 import { spacing } from '@mui/system';
 import Container from '@mui/material/Container';
 import {useParams} from 'react-router-dom'

@@ -1,6 +1,6 @@
 import './ItemListContainer.css';
 import ItemList from '../Item/ItemList';
-import ListProducts from '../../utils/ListProducts';
+import ListProducts from '../../utils/listProducts';
 import React, { useState, useEffect } from "react";
 import { Box, Grid } from '@mui/material';
 import { useParams } from 'react-router-dom'

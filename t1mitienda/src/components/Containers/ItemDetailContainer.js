@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import ListProducts from '../../utils/ListProducts';
+import ListProducts from '../../utils/listProducts';
 import ItemDetail from "../Item/ItemDetail";
 import '../../pages/loader.css'
 

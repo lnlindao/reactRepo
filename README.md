@@ -1,7 +1,6 @@
 <h1>My first store in React</h1>
 
-
-<img src="https://www.mobinius.com/wp-content/uploads/2020/02/reactjs-2.png"/ width='200px'>
+![](https://www.mobinius.com/wp-content/uploads/2020/02/reactjs-2.png)
 
 Hi! this is my first store created with React. The design is based on the material design libraries and below is the dependency detail.
 <br>
@@ -13,7 +12,8 @@ Hi! this is my first store created with React. The design is based on the materi
 The following libraries were used
 ##Material Design
 You need to install the UI library of MUI, you have the documentation [here](httphttps://mui.com/getting-started/installation/:// "here")
-<img src="https://mui.com/static/logo.png"/ width='200px'>
+
+![](https://mui.com/static/logo.png)
 Installing via npm
 ```javascript
 npm install @mui/material @emotion/react @emotion/styled

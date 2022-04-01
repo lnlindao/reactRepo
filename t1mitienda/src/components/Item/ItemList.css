@@ -1,0 +1,5 @@
+.itemProducto{
+    padding-inline-end: 1rem;
+    padding-block-end: 3rem;
+    width: calc( 33.3% - 16px);
+}

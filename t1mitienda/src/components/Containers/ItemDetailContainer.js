@@ -1,13 +1,14 @@
 import { useState, useEffect } from "react";
 import ListProducts from '../../utils/ListProducts';
 import ItemDetail from "../Item/ItemDetail";
+import '../../pages/loader.css'
 
 
 
 
-const urlImgs = "./images/"
+const urlImgs = "/images/"
 
-const ItemDetailContainer = () => {
+const ItemDetailContainer = ({idProducto}) => {
 
     const [loading, setLoading] = useState([true])
     const [product, setProduct] = useState([])
@@ -35,12 +36,13 @@ const ItemDetailContainer = () => {
     return(
         <>
         { loading ? (
+            //<img src={require('../../public/images/loader.gif').default} className="loader" alt="loader" />
             <img src={urlImgs+"loader.gif"} className="loader" alt="loader" />
         ) : (
             
             <div className='container-cards'>
-                <h1>Detalle</h1>
-                <ItemDetail producto={product} idProduct={2}/>
+                
+                <ItemDetail producto={product} idProduct={idProducto}/>
             </div>
         )
             

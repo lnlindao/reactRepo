@@ -1,12 +1,12 @@
+import React from 'react';
 import ItemListContainer from '../components/Containers/ItemListContainer';
 import Container from '@mui/material/Container';
 
-function Homepage() {
+function NotFound() {
   return (
     <>
-      <img src='/images/banner/1.jpg'/>
       <Container maxWidth="lg">
-        <ItemListContainer/>
+        <p>Te has perdido!</p>
       </Container>
     </>
     
@@ -14,4 +14,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default NotFound;

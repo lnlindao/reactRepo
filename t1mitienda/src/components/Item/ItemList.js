@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
+import './ItemList.css'
 import Item from "./Item";
 import Box from '@mui/material/Box';
 
 
 const ItemList = ({productos}) => {
-    
+
     return(
         <>        
         
@@ -12,7 +13,7 @@ const ItemList = ({productos}) => {
                     const {id} = product
 
                     return(
-                        <Box gridColumn="span 3" key={id}>
+                        <Box key={id} className="itemProducto">
                             <Item data={product} />
                         </Box>
                     )

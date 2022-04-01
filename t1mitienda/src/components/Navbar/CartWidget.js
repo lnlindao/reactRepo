@@ -6,7 +6,6 @@ const CartWidget = () =>{
     return(
     
         <>
-        
             <ShoppingCartRoundedIcon />
         </>           
                 

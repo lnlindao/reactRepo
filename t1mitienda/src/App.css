@@ -4,7 +4,7 @@ header.main-header {
   display: flex;
   padding: 10px 25px;
   box-shadow: 1px 5px 15px #81818129;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   box-sizing: border-box;
 }

@@ -13,8 +13,9 @@ The following libraries were used
 ##Material Design
 You need to install the UI library of MUI, you have the documentation [here](httphttps://mui.com/getting-started/installation/:// "here")
 
-![](https://mui.com/static/logo.png)
+
 Installing via npm
+
 ```javascript
 npm install @mui/material @emotion/react @emotion/styled
 ```

@@ -8,9 +8,7 @@ Hi! this is my first store created with React. The design is based on the materi
 
 <h3>**Table of Contents**</h3>
 
-[TOCM]
 
-[TOC]
 #Dependencies
 The following libraries were used
 ##Material Design
@@ -20,10 +18,12 @@ Installing via npm
 ```javascript
 npm install @mui/material @emotion/react @emotion/styled
 ```
-<br>
+
+
 ##Routing
 Please install the React router librarie
 Installing via npm
+
 ```javascript
 npm i react-router-dom
 ```

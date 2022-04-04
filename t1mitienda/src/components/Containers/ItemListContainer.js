@@ -1,8 +1,9 @@
 import './ItemListContainer.css';
 import ItemList from '../Item/ItemList';
 import ListProducts from '../../utils/listProducts';
+import getProduct from '../../helpers/GetProductPromise';
 import React, { useState, useEffect } from "react";
-import { Box, Grid } from '@mui/material';
+import { Box, Container } from '@mui/material';
 import { useParams } from 'react-router-dom'
 
 
@@ -17,16 +18,9 @@ const ItemListContainer = () => {
     const [loading, setLoading] = useState([true])
     const [products, setProducts] = useState([])
 
-    const getProducts = () => {
-        return new Promise((resolve, reject) => {
-            return setTimeout(() => {
-                resolve(ListProducts)
-            },1000);
-        })
-    }
-        
     useEffect( () => {
-        getProducts().then( (addProducts) => {                     
+        
+        getProduct(ListProducts).then( (addProducts) => {                     
             if( addProducts.find(foundCategory => foundCategory.category == category) ){   
                 setLoading(false)               
                 setProducts([]) 
@@ -60,16 +54,20 @@ const ItemListContainer = () => {
                 <img src={urlImgs+"loader.gif"} className="loader" alt="loader" />
             </Box>
         ) : (
-            <Box
-                sx={{
-                display: 'flex',
-                flexWrap: 'wrap',
-                borderRadius: 1,
-                paddingY: '2rem'
-                }}
-            >
-                <ItemList productos={products}/>
-            </Box>
+            
+            <Container maxWidth="lg">
+                <h1>Tienda</h1>
+                <Box
+                    sx={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    borderRadius: 1,
+                    paddingY: '2rem'
+                    }}
+                >
+                    <ItemList productos={products}/>
+                </Box>
+            </Container>
         )
             
         }

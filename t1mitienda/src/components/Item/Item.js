@@ -8,9 +8,6 @@ import { CardActionArea } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const urlImgs = "./images/products/"
-const onAdd = (count) =>{
-    console.log(`Productos agregados: ${count}`)
-}
 
 
 export default function Item( {data} ) {
@@ -28,11 +25,10 @@ export default function Item( {data} ) {
                         image={urlImgs+img}
                         alt="espejo"
                     />
-                    <CardContent>
+                    <CardContent sx={{padding:'3rem 2rem'}}>
                         <Typography variant="h5" component="div">{title}</Typography>
                         <Typography gutterBottom className='price'>$ {price}</Typography>
                         <Typography gutterBottom variant="body2" color="text.secondary" >{detail}</Typography>
-                        <ItemCount stock={stock} initial={1} onAdd={onAdd}></ItemCount>
                     </CardContent>
                 </CardActionArea>
             </Link>

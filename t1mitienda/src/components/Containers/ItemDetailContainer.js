@@ -1,30 +1,28 @@
 import { useState, useEffect } from "react";
 import ListProducts from '../../utils/listProducts';
 import ItemDetail from "../Item/ItemDetail";
+import Container from '@mui/material/Container';
+import getProduct from '../../helpers/GetProductPromise';
+import {useParams} from 'react-router-dom'
 import '../../pages/loader.css'
-
-
 
 
 const urlImgs = "/images/"
 
-const ItemDetailContainer = ({idProducto}) => {
+
+
+const ItemDetailContainer = () => {
+
+    const {category, id} = useParams()
 
     const [loading, setLoading] = useState([true])
     const [product, setProduct] = useState([])
-
-    const getItem = () => {
-        return new Promise((resolve, reject) => {
-            return setTimeout(() => {
-                resolve(ListProducts)
-            },2000);
-        })
-    }
         
     useEffect( () => {
-        getItem().then( (addProducts) => {               
+        getProduct(ListProducts).then( (addProducts) => {               
             setLoading(false)  
-            setProduct(addProducts)            
+            setProduct(addProducts)             
+            filterProductById()           
         }).catch( (error) =>{
             console.log(error)
         }).finally( () => {
@@ -33,20 +31,32 @@ const ItemDetailContainer = ({idProducto}) => {
     }, [])
 
 
+    const filterProductById = () => {
+        return ListProducts.map( (product)  => {
+            if (product.id == id){
+                return console.log("Filtro",product)
+            }
+        })
+    }
+
+
     return(
         <>
-        { loading ? (
-            //<img src={require('../../public/images/loader.gif').default} className="loader" alt="loader" />
-            <img src={urlImgs+"loader.gif"} className="loader" alt="loader" />
-        ) : (
-            
-            <div className='container-cards'>
+        <Container sx={{ paddingX: 2, display: 'flex' }} maxWidth="lg">
+            { loading ? (
+                <img src={urlImgs+"loader.gif"} className="loader" alt="loader" />
+            ) : (
                 
-                <ItemDetail producto={product} idProduct={idProducto}/>
-            </div>
-        )
-            
-        }
+                
+                
+                    <div className='container-cards'>                    
+                        <ItemDetail producto={product} idProduct={id}/>
+                    </div>
+            )
+                
+            }
+        
+        </Container>
             
         </>
     );

@@ -3,10 +3,14 @@ import './ItemDetail.css'
 import Grid from '@mui/material/Grid';
 import Button from '@mui/material/Button';
 import { Box } from '@mui/system';
+import ItemCount from './ItemCount';
 
 
 
 const urlImgs = "/images/products/"
+const onAdd = (count) =>{
+    console.log(`Productos agregados: ${count}`)
+}
 
 
 const ItemDetail = ({producto, idProduct}) => {
@@ -35,10 +39,8 @@ const ItemDetail = ({producto, idProduct}) => {
                                 <Box className="productTitle">{title}</Box>
                                 <Box className="price">$ {price}</Box>
                                 <Box className="detail">{detail}</Box>
-                                <Button variant="contained" fullWidth={true}
-                                    size="large"
-                                    > Agregar al carrito
-                                </Button>
+                                
+                                <ItemCount stock={stock} initial={1} onAdd={onAdd}></ItemCount>
                             </Grid>
                         </Grid>
                     </Box>

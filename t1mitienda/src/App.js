@@ -1,12 +1,10 @@
 import './App.css';
-import Container from '@mui/material/Container';
 import {BrowserRouter, Routes, Route}  from 'react-router-dom';
 
 //COMPONENTS
 import NavBar from './components/Navbar/NavBar';
 import ItemDetailContainer from './components/Containers/ItemDetailContainer';
-import Store from './pages/Store';
-import ProductDetail from './pages/ProductDetail';
+import ItemListContainer from './components/Containers/ItemListContainer';
 
 //PAGES
 import Homepage from './pages/Homepage';
@@ -22,10 +20,9 @@ function App() {
         <NavBar/>
         <Routes>
           <Route path="/" element={<Homepage/>}/>
-          <Route path="/tienda" element={<Store/>}/>
-          <Route path="/producto/:category/:id" element={<ProductDetail/>}/>
-          <Route path="/:category" element={<Store/>}/>
-          <Route path="/categorias" element={<Store/>}/>
+          <Route path="/tienda" element={<ItemListContainer/>}/>
+          <Route path="/:category" element={<ItemListContainer/>}/>          
+          <Route path="/producto/:category/:id" element={<ItemDetailContainer/>}/>
           <Route path="*" element={<NotFound/>}/>
         </Routes>
       </BrowserRouter>

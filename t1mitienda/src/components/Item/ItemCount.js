@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import {useState} from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
@@ -28,7 +28,7 @@ const ItemCount = ({stock, initial, onAdd}) => {
                 <TextField id="outlined-size-normal" value={count} variant="outlined"/>
                 <Button variant="outlined" onClick={addProduct}>+</Button>
             </Stack>
-            <Button variant="contained" fullWidth={true}
+            <Button variant="contained"
                     size="large"
                     onClick={() => {onAdd (count)}}> Agregar al carrito
             </Button>

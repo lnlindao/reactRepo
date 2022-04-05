@@ -15,7 +15,7 @@ const urlImgs = "/images/"
 const ItemListContainer = () => {
     
     const { category } = useParams()
-    const [loading, setLoading] = useState([true])
+    const [loading, setLoading] = useState(true)
     const [products, setProducts] = useState([])
 
     useEffect( () => {

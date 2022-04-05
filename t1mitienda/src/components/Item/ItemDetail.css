@@ -8,3 +8,12 @@ img {
     font-size: 2rem;
     font-weight: 700;
 }
+.quantity {
+    margin: 2rem 0;
+    background: #e8f4ff;
+    padding: 1rem;
+    border-radius: 0.4rem;
+}
+.actionButtonsContainer button:first-of-type{
+    margin-inline-end: 1rem;
+}

@@ -13,7 +13,7 @@ const urlImgs = "/images/"
 
 const ItemDetailContainer = () => {
 
-    const {category, id} = useParams()
+    const {id} = useParams()
 
     const [loading, setLoading] = useState([true])
     const [product, setProduct] = useState([])
@@ -21,23 +21,13 @@ const ItemDetailContainer = () => {
     useEffect( () => {
         getProduct(ListProducts).then( (addProducts) => {               
             setLoading(false)  
-            setProduct(addProducts)             
-            filterProductById()           
+            setProduct(addProducts)        
         }).catch( (error) =>{
             console.log(error)
         }).finally( () => {
             console.log("Agegados Detail Container")
         })
     }, [])
-
-
-    const filterProductById = () => {
-        return ListProducts.map( (product)  => {
-            if (product.id == id){
-                return console.log("Filtro",product)
-            }
-        })
-    }
 
 
     return(

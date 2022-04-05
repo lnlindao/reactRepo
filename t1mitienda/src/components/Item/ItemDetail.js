@@ -1,7 +1,6 @@
 import React from 'react'
 import './ItemDetail.css'
 import Grid from '@mui/material/Grid';
-import Button from '@mui/material/Button';
 import { Box } from '@mui/system';
 import ItemCount from './ItemCount';
 

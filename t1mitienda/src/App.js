@@ -11,23 +11,27 @@ import Cart from './components/Cart/Cart'
 import Homepage from './pages/Homepage';
 import NotFound from './pages/NotFound';
 
+//CONTEXT
+import {CartProvider} from './context/CartContext'
 
 
 function App() {
   return (
     <>
 
-      <BrowserRouter>
-        <NavBar/>
-        <Routes>
-          <Route path="/" element={<Homepage/>}/>
-          <Route path="/tienda" element={<ItemListContainer/>}/>
-          <Route path="/:category" element={<ItemListContainer/>}/>          
-          <Route path="/producto/:category/:id" element={<ItemDetailContainer/>}/>          
-          <Route path="/cart" element={<Cart/>}/>
-          <Route path="*" element={<NotFound/>}/>
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <BrowserRouter>
+          <NavBar/>
+          <Routes>
+            <Route path="/" element={<Homepage/>}/>
+            <Route path="/tienda" element={<ItemListContainer/>}/>
+            <Route path="/:category" element={<ItemListContainer/>}/>
+            <Route path="/producto/:category/:id" element={<ItemDetailContainer/>}/>
+            <Route path="/cart" element={<Cart/>}/>
+            <Route path="*" element={<NotFound/>}/>
+          </Routes>
+        </BrowserRouter>
+      </CartProvider>
       
 
       

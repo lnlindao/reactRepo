@@ -1,10 +1,6 @@
-import React from 'react';
-import ItemCount from './ItemCount';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
+import {useContext} from 'react';
 import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
+import { CardActionArea, CardMedia, CardContent, Card } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 const urlImgs = "./images/products/"
@@ -12,7 +8,7 @@ const urlImgs = "./images/products/"
 
 export default function Item( {data} ) {
 
-    const {id, title, price, detail, img, stock, category} = data
+    const {id, title, price, detail, img, category} = data
 
     return (        
           

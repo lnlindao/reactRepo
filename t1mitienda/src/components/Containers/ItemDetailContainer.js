@@ -13,15 +13,20 @@ const urlImgs = "/images/"
 
 const ItemDetailContainer = () => {
 
-    const {id} = useParams()
+    const { id} = useParams()
 
-    const [loading, setLoading] = useState(true)
+    const [loading, setLoading] = useState([true])
     const [product, setProduct] = useState([])
         
     useEffect( () => {
-        getProduct(ListProducts).then( (addProducts) => {               
-            setLoading(false)  
-            setProduct(addProducts)        
+        getProduct(ListProducts).then( (filterProducts) => {  
+            filterProducts.map( (productFound)  => {
+                if (productFound.id == id){
+                    setLoading(false)  
+                    return setProduct(productFound)  
+                }
+            })
+                                     
         }).catch( (error) =>{
             console.log(error)
         }).finally( () => {
@@ -36,8 +41,6 @@ const ItemDetailContainer = () => {
             { loading ? (
                 <img src={urlImgs+"loader.gif"} className="loader" alt="loader" />
             ) : (
-                
-                
                 
                     <div className='container-cards'>                    
                         <ItemDetail producto={product} idProduct={id}/>

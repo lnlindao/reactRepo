@@ -1,8 +1,8 @@
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useContext} from 'react';
 import './ItemDetail.css';
-import Grid from '@mui/material/Grid';
-import { Box, Button } from '@mui/material';
 import ItemCount from './ItemCount';
+import CartContext from '../../context/CartContext';
+import { Box, Button, Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 
@@ -12,32 +12,28 @@ const urlImgs = "/images/products/"
 
 
 
-const ItemDetail = ({producto, idProduct}) => {
+const ItemDetail = ({producto}) => {
 
+    const {id, title, detail, img, price, stock} = producto
+
+    const {cartProducts, addProductToCart} = useContext(CartContext)
     
     const [quantityAdded, setQuantityAdded] = useState(0)
-
 
     const onAdd = (quantityToAdd) =>{
         console.log(`Productos agregados: ${quantityToAdd}`)
         setQuantityAdded(quantityAdded+quantityToAdd)
+        addProductToCart(producto, quantityToAdd)
     }
 
+    
 
 
 
     return (
     <>
-                
-                
-
-        {producto.map( ( product ) => {            
-            const {id, title, price, detail, img, stock} = product
-            
-            if (id==idProduct){
-                    
-                return(
                     <Box  sx={{ flexGrow: 1, paddingY: 10  }}  key={id}>
+                        
                         <Grid   container
                                 direction="row"
                                 justifyContent="flex-start"
@@ -63,29 +59,12 @@ const ItemDetail = ({producto, idProduct}) => {
                                     )
                                      : <ItemCount stock={stock} initial={1} onAdd={onAdd}></ItemCount>
 
-
-
-
-
-
-                                }
-
-
-
-
-
-
-
-                                
+                                }                                
                             </Grid>
                         </Grid>
                     </Box>
                     
-                );
-            }
-                
-        })}        
-                
+            
     
     </>
     );

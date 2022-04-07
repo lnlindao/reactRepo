@@ -1,0 +1,21 @@
+.main-header button svg {
+    color: #333;
+}
+.productThumb {
+    width: 3rem;
+}
+.productAddedTitle{
+    font-weight: bold;
+}
+.productAddedFloatingCart div {
+    margin-inline-end: 1rem;
+}
+.menuCartMessage{
+    padding: 0.5rem 1rem;
+}
+button.actionButtons {
+    margin-top: 1.5rem;
+}
+.actionButtons:first-of-type {
+    margin-inline-end: 1rem;
+}

@@ -90,13 +90,15 @@ const CartWidget = () =>{
                                                 <Box className='row1'>
                                                     <img src={urlImgs+img} alt="product img" className='productThumb'/>
                                                 </Box>
-                                                <Box className='row1'>
-                                                    Cantidad: {quantityToAdd}
-                                                </Box>
                                                 <Box className='row2'>
                                                     <div className='productAddedTitle'>{title}</div>
                                                     <span>$ {price}</span>
                                                 </Box>
+                                                <Box className='row1'>
+                                                     
+                                                    <div className='productAddedTitle'>Cantidad:</div>
+                                                    <span>{quantityToAdd}</span>
+                                                </Box>                                                
                                                 <Box className='row3'>
                                                     <HighlightOffIcon onClick={() => removeItem(id) } />
                                                 </Box>

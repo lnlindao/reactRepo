@@ -36,7 +36,7 @@ const CartWidget = () =>{
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                 >
-                    <ShoppingCartRoundedIcon className='cartButton'/>
+                    <ShoppingCartRoundedIcon className='cartButton'/> {cartProducts.length}
                 </IconButton>
                 </Tooltip>
             </Box>
@@ -98,7 +98,7 @@ const CartWidget = () =>{
                                                     <span>$ {price}</span>
                                                 </Box>
                                                 <Box className='row3'>
-                                                    <HighlightOffIcon onClick={() => removeItem(id) }/>
+                                                    <HighlightOffIcon onClick={() => removeItem(id) } />
                                                 </Box>
                                         </MenuItem>                                
                                     )                            

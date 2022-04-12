@@ -5,6 +5,7 @@ import Container from '@mui/material/Container';
 import getProduct from '../../helpers/GetProductPromise';
 import {useParams} from 'react-router-dom'
 import '../../pages/loader.css'
+import { CircularProgress  } from '@mui/material';
 
 
 const urlImgs = "/images/"
@@ -37,9 +38,10 @@ const ItemDetailContainer = () => {
 
     return(
         <>
-        <Container sx={{ paddingX: 2, display: 'flex' }} maxWidth="lg">
+        <Container sx={{ paddingX: 2, display: 'flex', justifyContent:'center', 
+                alignItems: 'center', height:'100vh' }} maxWidth="lg">
             { loading ? (
-                <img src={urlImgs+"loader.gif"} className="loader" alt="loader" />
+                <CircularProgress/>
             ) : (
                 
                     <div className='container-cards'>                    

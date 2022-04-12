@@ -11,7 +11,6 @@ const urlImgs = "/images/products/"
 
 
 
-
 const ItemDetail = ({producto}) => {
 
     const {id, title, detail, img, price, stock} = producto
@@ -52,7 +51,7 @@ const ItemDetail = ({producto}) => {
                                                 direction="row"
                                                 justifyContent="flex-start" className='actionButtonsContainer'>
                                                     
-                                            <Box className="quantity"><b>Cantidad: </b>{quantityAdded}</Box>
+                                            <Box className="quantity"><b>Cantidad agregada: </b>{quantityAdded}</Box>
                                             <Link to={`/tienda`}><Button variant="contained" size="large" className='actionButtons'> Continuar comprando</Button></Link>
                                             <Link to={`/cart`}><Button variant="contained" size="large" className='actionButtons'> Finalizar compra</Button></Link>
                                         </Box>

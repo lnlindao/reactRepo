@@ -1,0 +1,21 @@
+table {
+    margin-top: 3rem;
+}
+thead, .totals {
+    background: #f3f3f3;
+    padding: 2rem;
+}
+.totals {
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+}
+img.thumbImg {
+    max-width: 4rem;
+}
+.deleteButton {
+    cursor: pointer;
+}
+thead tr th.MuiTableCell-head {
+    font-weight: 600;
+}

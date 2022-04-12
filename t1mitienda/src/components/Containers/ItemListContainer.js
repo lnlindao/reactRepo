@@ -3,7 +3,7 @@ import ItemList from '../Item/ItemList';
 import ListProducts from '../../utils/listProducts';
 import getProduct from '../../helpers/GetProductPromise';
 import React, { useState, useEffect } from "react";
-import { Box, Container } from '@mui/material';
+import { Box, Container, CircularProgress  } from '@mui/material';
 import { useParams } from 'react-router-dom'
 
 
@@ -50,8 +50,9 @@ const ItemListContainer = () => {
     return(
         <>
         { loading ? (
-            <Box sx={{ display:'flex' }}>
-                <img src={urlImgs+"loader.gif"} className="loader" alt="loader" />
+            <Box sx={{ display:'flex', justifyContent:'center', 
+            alignItems: 'center', height:'100vh'}}>
+                <CircularProgress/>
             </Box>
         ) : (
             

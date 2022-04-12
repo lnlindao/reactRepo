@@ -1,4 +1,4 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import CartContext from '../../context/CartContext';
 import ShoppingCartRoundedIcon from '@mui/icons-material/ShoppingCartRounded';
@@ -11,7 +11,7 @@ const urlImgs = "/images/products/"
 
 const CartWidget = () =>{
 
-    const {cartProducts, removeItem, clear} = useContext(CartContext)
+    const {cartProducts, removeItem, clear, qtyItemsCart, totalsPrices} = useContext(CartContext)
     
     const [anchorEl, setAnchorEl] = React.useState(null);
     const open = Boolean(anchorEl);
@@ -22,6 +22,7 @@ const CartWidget = () =>{
     const handleClose = () => {
         setAnchorEl(null);
     };
+
 
 
     return (
@@ -36,7 +37,7 @@ const CartWidget = () =>{
                     aria-haspopup="true"
                     aria-expanded={open ? 'true' : undefined}
                 >
-                    <ShoppingCartRoundedIcon className='cartButton'/> {cartProducts.length}
+                    <ShoppingCartRoundedIcon className='cartButton'/><div>{cartProducts.length>0 && qtyItemsCart()}</div> 
                 </IconButton>
                 </Tooltip>
             </Box>
